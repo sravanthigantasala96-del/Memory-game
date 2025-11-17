@@ -172,3 +172,84 @@ img {
   object-fit: cover;
   border-radius: 8px;
 }
+
+
+/*
+.matched {
+  background-color: #38BDF8;
+  border-color: #0EA5E9;
+  box-shadow: 0 0 12px #38BDF8;
+  transform: scale(1.06);
+  transition: 0.3s ease-in-out;
+}
+*/
+
+
+/* for rainbow theme
+
+.matched {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+*/ 
+/* Animated colorful border */
+/*
+.matched::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 12px;
+  padding: 3px;
+  background: linear-gradient(
+    120deg,
+    #ff0077,
+    #ffae00,
+    #00eaff,
+    #8a2be2,
+    #ff0077
+  );
+  background-size: 300% 300%;
+  animation: rainbowGlow 3s ease infinite;
+  z-index: -1;
+}
+
+.matched img,
+.matched div {
+  position: relative;
+  z-index: 1;
+}
+
+*/
+/* Smooth rainbow animation 
+@keyframes rainbowGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}                  
+end of rainbow theme*/
+
+
+.matched {
+  border: 6px solid transparent;   /* Increased thickness */
+  border-radius: 14px;             /* Slightly rounder corners */
+  background-clip: padding-box;
+  position: relative;
+}
+
+.matched::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  padding: 4px;  /* Thicker gradient edge */
+  background: linear-gradient(135deg, #6a5acd, #00bcd4, #ff4081);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+
+

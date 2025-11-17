@@ -85,8 +85,12 @@ const GameBoard = () => {
           }
           return card;
         });
-        setMatchedCards(matchedCards);
+        //styling-color
+        setCards(matchedCards);
         resetCards();
+
+        //setMatchedCards(matchedCards);
+        //resetCards();
       } else {
         console.log("Not a Match!!");
         setTimeout(() => {
@@ -132,6 +136,11 @@ const GameBoard = () => {
           key={card.id}
           id={card.id}
           isFlipped={card.isFlipped}
+
+        //for style-colour
+      
+          isMatched={card.isMatched}
+
           image={card.image}
           onClick={handleCardClick}
           level={level}
