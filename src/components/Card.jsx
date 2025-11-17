@@ -1,16 +1,30 @@
 import ReactCardFlip from 'react-card-flip';
 
-const Card = ({ id, isFlipped, onClick, image, level }) => {
+const Card = ({ id, isFlipped, isMatched, onClick, image, level }) => {
   return (
-    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-      {/* Front of the card (shown when not flipped) */}
+    <ReactCardFlip isFlipped={isFlipped || isMatched} flipDirection="horizontal">
+
+    {/* FRONT SIDE */}
       <div 
-        className={"frontCard-"+level}
+        className={`frontCard-${level} ${isMatched ? "matched" : ""}`}
         onClick={() => onClick(id)}
       />
 
-      {/* Back of the card (shown when flipped) */}
+      {/* Front of the card (shown when not flipped) */}
+      {/*<div 
+        className={"frontCard-"+level}
+        onClick={() => onClick(id)}
+      /> */}
+
+       {/* BACK SIDE */}
       <div 
+        className={`backCard ${isMatched ? "matched" : ""}`}
+      >
+        <img src={image} alt="card" />
+      </div>
+
+      {/* Back of the card (shown when flipped) */}
+      {/*<div 
         className="backCard"
         // onClick={() => onClick(id)}
       >
@@ -18,7 +32,7 @@ const Card = ({ id, isFlipped, onClick, image, level }) => {
           src={image} 
           alt="card"
         />
-      </div>
+      </div>*/}
     </ReactCardFlip>
   );
 };

@@ -86,8 +86,12 @@ const GameBoard = () => {
           }
           return card;
         });
-        setMatchedCards(matchedCards);
+        //styling-color
+        setCards(matchedCards);
         resetCards();
+
+        //setMatchedCards(matchedCards);
+        //resetCards();
       } else {
         console.log("Not a Match!!");
         setTimeout(() => {
@@ -133,20 +137,25 @@ const GameBoard = () => {
 
   return (
     <div>
-      <ScoreBoard totalMoves={totalFlips} bestScore={bestScore} />
-      <div className={"Cards-" + level}>
-        {cards.map((card) => (
-          <Card
-            key={card.id}
-            id={card.id}
-            isFlipped={card.isFlipped}
-            image={card.image}
-            onClick={handleCardClick}
-            level={level}
-          />
-        ))}
-      </div>
+    <ScoreBoard totalMoves={totalFlips} bestScore={bestScore} />
+    <div className={"Cards-"+level}>
+      {cards.map((card) => (
+        <Card
+          key={card.id}
+          id={card.id}
+          isFlipped={card.isFlipped}
+
+        //for style-colour
+      
+          isMatched={card.isMatched}
+
+          image={card.image}
+          onClick={handleCardClick}
+          level={level}
+        />
+      ))}
     </div>
+</div>
   );
 };
 
