@@ -9,7 +9,7 @@ import { Link } from "react-router";
 import Typography from "@mui/material/Typography";
 
 export default function AlertDialog(props) {
-  const { isOpen, totalMoves, bestScore, onRestart } = props;
+  const { isOpen, totalMoves, bestScore, onRestart, stars } = props;
   <Link to="/">Home</Link>;
   return (
     <React.Fragment>
