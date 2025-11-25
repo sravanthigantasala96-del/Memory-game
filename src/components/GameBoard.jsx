@@ -170,7 +170,11 @@ const GameBoard = () => {
 
   return (
     <div className="game-container">
-      <ScoreBoard totalMoves={totalFlips} bestScore={bestScore} />
+     <ScoreBoard
+  totalMoves={totalFlips}
+  bestScore={bestScore}
+  stars={stars}
+/>
       <div className={"Cards-" + level}>
         {cards.map((card) => (
           <Card
@@ -194,11 +198,12 @@ const GameBoard = () => {
       </button>
       <div>
         <EndGameMessageModal
-          totalMoves={totalFlips}
-          bestScore={bestScore}
-          isOpen={gameover}
-          onRestart={restartGame}
-        />
+  totalMoves={totalFlips}
+  bestScore={bestScore}
+  stars={stars}
+  isOpen={gameover}
+  onRestart={restartGame}
+/>
       </div>
     </div>
   );

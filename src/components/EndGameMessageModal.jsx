@@ -21,10 +21,17 @@ export default function AlertDialog(props) {
         <DialogTitle id="alert-dialog-title">Congratulations!!</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            <Typography gutterBottom>TotalMoves: {totalMoves}</Typography>
-            <Typography gutterBottom>BestScore: {bestScore}</Typography>
-          </DialogContentText>
-        </DialogContent>
+            {/* Stars */}
+    <div style={{ fontSize: "2rem", marginBottom: "10px" }}>
+      {stars?.map((star, i) => (
+        <span key={i} style={{ opacity: star }}>⭐</span>
+      ))}
+    </div>
+
+    <Typography gutterBottom>TotalMoves: {totalMoves}</Typography>
+    <Typography gutterBottom>BestScore: {bestScore}</Typography>
+  </DialogContentText>
+</DialogContent>
         <DialogActions>
           <Button variant="outlined" component={Link} to="/">
             Home

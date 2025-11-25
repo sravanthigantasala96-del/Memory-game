@@ -1,7 +1,7 @@
 import React from "react";
+import "./ScoreBoard.css"; 
 
-function ScoreBoard(props) {
-  const { totalMoves, bestScore, stars } = props;
+function ScoreBoard({ totalMoves, bestScore, stars }) {
   return (
    <div>
       <div className="score-info">
