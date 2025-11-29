@@ -45,3 +45,20 @@ A simple yet complete React Memory Game built using modern React concepts:
   - Responsive Layout
 
 
+**Deployment (GitHub Pages)**
+
+- Ensure `homepage` in `package.json` is set to `https://<your-username>.github.io/<repo-name>` (already set for this repo).
+- Build and deploy the site using the npm scripts:
+
+```bash
+npm install
+npm run build
+npm run deploy
+```
+
+- Notes:
+  - The deploy step uses `gh-pages` to push the `dist` folder to the `gh-pages` branch.
+  - If you run into peer-dependency issues during `npm install`, you can run `npm install --legacy-peer-deps`.
+  - After deployment, your site will be available at `https://<your-username>.github.io/<repo-name>` and GitHub → Settings → Pages will show the published branch.
+
+
