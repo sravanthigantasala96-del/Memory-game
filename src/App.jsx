@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter basename="/Memory-game">
+      <BrowserRouter>
         <Routes>
             <Route path='/' element={<Home />}/>
             <Route path='/game' element={<Game />}/>
